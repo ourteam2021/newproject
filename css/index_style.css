@@ -1,0 +1,53 @@
+body {font-family: 'Josefin Sans', sans-serif;color: #2C2C2C;background-image: url(../img/light_dot.jpg);}
+.header{border-radius: 10px; box-shadow: 2px 2px 20px #dddddd;}
+.allbo{border-radius: 10px;box-shadow: 2px 2px 20px #c4c4c4;}
+.adminpanal{position: absolute; z-index: 22; left: 8%;top: 1%;}
+.admin{position: absolute; left: 1%; top: 2%;}
+.admin1{position: absolute; left: 1%; top: 8%;}
+.show{display: inline;}
+.hide{display: none;}
+p{font-size: 13px;margin-bottom: 0; padding: 0;}
+
+li{list-style: none; padding: 0; margin: 0;display:inline-block;}
+ul{list-style: none; padding: 0; margin: 0;}
+.allpackegebtn {position: fixed; z-index: 50; transition: all 1s ; cursor: pointer; width: 45px; height: 45px; border-radius: 50%;bottom: 2%;left: 1%;box-shadow: 2px 2px 20px #616161;display: flex;justify-content: center;align-items: center;}
+.allpackegebtn:hover {color: #0584a3;border: 1px solid #0584a3;}
+.blackbox{background-color: #969696af;width: 100%;height: 100vh;top: 0;position: fixed;z-index: 33;}
+.blackbox1{background-color: #96969600;width: 100%;height: 100vh;top: 0;position: fixed;z-index: 10;}
+.allpackege{position: fixed;bottom: 3%;z-index: 22;left: 7.9%;border-radius: 10px}
+.allpackege::before
+{
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: -0.5%;
+    bottom: 3%;
+    background-color: #F8F9FA;
+    transform: rotate(45deg);
+}
+#mostuse{position: relative;}
+.textdirec{position: absolute; right: 0%;top: 80%;}
+.darkmode{z-index: 33; transition: all 1s ; cursor: pointer; box-shadow: 2px 2px 20px #c4c4c4;position: fixed;bottom: 2%; right: 2%; width: 45px; height: 45px; border-radius: 50%; background-color: #F8F9FA;display: flex;justify-content: center;align-items: center;}
+.darkmode:hover {color: #0584a3;border: 1px solid #0584a3;}
+.darkpanal{position: fixed; box-shadow: 2px 2px 20px #c4c4c4;border-radius: 10px;bottom: 12%;right: 2.2%;z-index: 22;}
+.darkpanal::before
+{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 7%;;
+    bottom: -5%;
+    background-color: #F8F9FA;
+    transform: rotate(45deg);
+}
+#myUL{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#adminpanal h5 {text-transform: uppercase ;}
+
+
+
