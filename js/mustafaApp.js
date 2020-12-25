@@ -3,7 +3,7 @@ const hr = document.querySelector("#hr");
 const mn = document.querySelector("#mn");
 const sc = document.querySelector("#sc");
 // light toggle
-
+const btn = document.querySelector(".toggleClass")
 const dark = document.querySelector(".dark")
 
 
@@ -25,6 +25,5 @@ setInterval ( ()=> {
 
 )
 
-
-dark.addEventListener("click",()=> { dark.classList.toggle("light");})
+btn.addEventListener("click", ()=> { dark.classList.toggle("light");})
 
