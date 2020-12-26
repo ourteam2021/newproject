@@ -1,1 +1,5 @@
 body {font-family: 'Josefin Sans', sans-serif;color: #2C2C2C;background-image: url(../img/light_dot.jpg);}
+
+.checked{
+    text-decoration: line-through;
+}
