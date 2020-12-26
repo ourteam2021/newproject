@@ -2,8 +2,8 @@ alert("j");
 
 const btns = document.querySelectorAll(".btn");
 const screen = document.querySelectorAll(".screen");
-const equalBtn = document.querySelectorAll(".btn-equal");
-const clearBtn = document.querySelectorAll(".btn-clear");
+const equalBtn = document.querySelector(".btn-equal");
+const clearBtn = document.querySelector(".btn-clear");
 
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function () {
