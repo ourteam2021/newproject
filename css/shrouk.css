@@ -3,7 +3,48 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-     font-family: 'Courier New', Courier, monospace;
+
+.Calculator {
+    flex: 0 0 98%;
 }
 
+.screen {
+    font-size: 7rem;
+    padding: 0.5rem;
+    background: rgb(41, 40, 56);
+    color: white;
+    border: none;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    transition: all 0.5s linear;
+}
+
+button {
+    flex: 0 0 25%;
+    border: 1px solid black;
+    padding: 0.25rem 0;
+    transition: all 2s ease;
+}
+
+.btn-grey, .btn-yellow {
+    border: 1px solid black;
+}
+
+button:hover {
+    background: blue;
+}
+
+.btn-yellow {
+    background: rgb(245, 146, 62);
+}
+
+.btn-grey {
+    background: rgb(224, 224, 224);
+}
+
+.btn, .btn-equal, .btn-clear {
+    font-size: 4rem;
+}
