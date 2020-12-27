@@ -1,5 +1,5 @@
 body {font-family: 'Josefin Sans', sans-serif;color: #2C2C2C;background-color: #3CA67F;}
-.textshow{box-shadow: 5px 5px 25px #9c9c9c;}
+.textshow{position: absolute;top: 60%;box-shadow: 5px 5px 25px #9c9c9c;}
 .onecolor{width: 160px; height: 120px; background-color: aquamarine;border: 2px solid #ffffff;border-radius: 10px; display: flex;align-items: center;justify-content: center;}
 .row{justify-content: space-around;}
 
