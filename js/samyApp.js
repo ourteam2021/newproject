@@ -9,7 +9,7 @@ function getCurrentTime(){
     let today = new Date();
     let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    let dateTime = date+' '+time;
+    let dateTime = date+' <i class="far fa-clock"></i> '+time;
     localStorage.setItem("time", dateTime);
 }
 
@@ -34,8 +34,8 @@ todoAdd.addEventListener("click", function () {
     } 
   tasks.push(task);
   localStorage.setItem("Tasks", JSON.stringify(tasks));
-  console.log(tasks);
   displayTasks();
+  todoInput.value = ""
 });
 
 //to displayTasks from local storage 
@@ -45,12 +45,14 @@ function displayTasks() {
     hasala += `
         <li class=" list-group-item list-group-item-action list-group-item-light mb-1 d-flex justify-content-between oneTask">
         <h5 class="text-dark ${tasks[i].taskStatus}">${tasks[i].taskName}</h5>
-        <p>${tasks[i].taskTime}</p>
         <div>
           <button onclick ="checkedTask(${i})" class="btn btn-info"><i class="fas fa-clipboard-check"></i></button>
           <button onclick ="deleteTask(${i})" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+          <button onclick ="showTime(${i})" class="btn btn-warning"><i class="far fa-clock"></i></button>
         </div>
         </li>
+        <p id="p${i}" class="overflow-hidden" ><i class="far fa-calendar-alt"></i> ${tasks[i].taskTime}</p>
+
         `;
   }
   todoTasksArea.innerHTML = hasala;
@@ -76,6 +78,15 @@ function checkedTask(checked){
     localStorage.setItem("Tasks" , JSON.stringify(tasks));
     displayTasks();
 } 
+
+//to to show / hide Time of task 
+
+function showTime(index){
+
+    $(`#p${index}`).toggle(500)
+
+}
+
 
 
 
