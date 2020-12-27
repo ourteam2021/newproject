@@ -9,8 +9,18 @@
   </head>
   <body>
 
-    
+    <h1 class=" text-center my-4">ToDo List</h1>
 
+    <div class="container d-flex">
+      <input type="text"  id="todoInput" class="form-control mr-2">
+      <button class="btn btn-outline-info mr-2" id="addTodo">Add</button>
+      <button class="btn btn-outline-danger" id="resetTodo">reset</button>
+    </div>
+
+    <div class="container">
+      <ul class="list-group my-2" id="todoTasks">
+      </ul>
+    </div>
 
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/popper.min.js"></script>
