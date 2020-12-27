@@ -3,18 +3,18 @@ const todoInput = document.getElementById("todoInput");
 const todoAdd = document.getElementById("addTodo");
 const todoTasksArea = document.getElementById("todoTasks");
 
-
 //getCurrentTime
-function getCurrentTime(){
-    let today = new Date();
-    let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    let dateTime = date+' <i class="far fa-clock"></i> '+time;
-    localStorage.setItem("time", dateTime);
+function getCurrentTime() {
+  let today = new Date();
+  let date =
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+  let time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  let dateTime = date + ' <i class="far fa-clock"></i> ' + time;
+  localStorage.setItem("time", dateTime);
 }
 
-
-// to check if localstorage is null or not  
+// to check if localstorage is null or not
 let tasks;
 if (localStorage.getItem("Tasks") === null) {
   tasks = [];
@@ -23,22 +23,22 @@ if (localStorage.getItem("Tasks") === null) {
   displayTasks();
 }
 
-//to add tasks to local storage 
+//to add tasks to local storage
 todoAdd.addEventListener("click", function () {
-    getCurrentTime();
-    let currentTime = localStorage.getItem("time")
-    let task = {
-        taskName :  todoInput.value,
-        taskStatus: "" ,
-        taskTime : currentTime
-    } 
+  getCurrentTime();
+  let currentTime = localStorage.getItem("time");
+  let task = {
+    taskName: todoInput.value,
+    taskStatus: "",
+    taskTime: currentTime,
+  };
   tasks.push(task);
   localStorage.setItem("Tasks", JSON.stringify(tasks));
   displayTasks();
-  todoInput.value = ""
+  todoInput.value = "";
 });
 
-//to displayTasks from local storage 
+//to displayTasks from local storage
 function displayTasks() {
   let hasala = "";
   for (let i = 0; i < tasks.length; i++) {
@@ -59,34 +59,33 @@ function displayTasks() {
 }
 
 //to displayTask from local storage and diplay updated tasks
-function deleteTask(selectedTask){
-    tasks.splice(selectedTask,1)
-    localStorage.setItem("Tasks" , JSON.stringify(tasks));
-    displayTasks();
+function deleteTask(selectedTask) {
+  tasks.splice(selectedTask, 1);
+  localStorage.setItem("Tasks", JSON.stringify(tasks));
+  displayTasks();
 }
 
-//to to replace task status deom cheked or not  
-function checkedTask(checked){
-    if(tasks[checked].taskStatus == "checked")
-    {
-        tasks[checked].taskStatus = ""
-    }
-    else{
-        tasks[checked].taskStatus = "checked"
-    }
-    
-    localStorage.setItem("Tasks" , JSON.stringify(tasks));
-    displayTasks();
-} 
+//to to replace task status deom cheked or not
+function checkedTask(checked) {
+  if (tasks[checked].taskStatus == "checked") {
+    tasks[checked].taskStatus = "";
+  } else {
+    tasks[checked].taskStatus = "checked";
+  }
 
-//to to show / hide Time of task 
+  localStorage.setItem("Tasks", JSON.stringify(tasks));
+  displayTasks();
+}
 
-function showTime(index){
+//to to show / hide Time of task
 
-    $(`#p${index}`).toggle(500)
-
+function showTime(index) {
+  $(`#p${index}`).toggle(500);
 }
 
 
-
-
+// reset app 
+$("#resetTodo").click(function () {
+  localStorage.removeItem("Tasks");
+  location.reload();
+});
